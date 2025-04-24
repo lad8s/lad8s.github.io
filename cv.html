@@ -6,7 +6,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
-     <title>SPV - Software QA Engineer and Technical Project Manager CV</title>
+     <title>SPV - Senior QA Engineer • Aspiring Engineering Manager • Team & Quality Leader - CV</title>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -14,6 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/581d00b336.js" crossorigin="anonymous"></script>
    <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+   <meta name="robots" content="noindex, nofollow">
   <style>
 body {
     background: #E0DDCE;
@@ -70,13 +71,63 @@ body {
     margin-bottom: 24px;
 }
 
+img.logo-tech {
+    border: 2px solid #D7D0C8;
+    border-radius:20%;
+    height: 25px;
+    opacity: 50%;
+    margin-top: -7px;
+}
+img.logo-tech:hover{
+    opacity: 100%;
+    cursor:pointer;
+}
+@media print 
+{
+    img.logo-tech {
+    opacity: 80%;
+    }
+    .print-extraspace {
+        page-break-after: always;
+    }
+    .print-topspace {
+        margin-top: 50px;
+    }
+    .col-print-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .logo-print {
+        margin-top: 5px;
+    }
+    .hori-timeline .events {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .hori-timeline .events .event-list {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+    .hori-timeline .events::after {
+    content: "";
+    position: absolute;
+    top: 246px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #D7D0C8;
+    z-index: 0;
+}
+}
 </style>
     </head>
  
     <body>
 <div class="container-fluid text-center" type="top">
     <!-- <br><br><br> -->
-<img src="images\logo\white_cropped.png" class="img-fluid animate__animated animate__heartBeat" width="55">
+<img src="images\logo\white_cropped.png" class="img-fluid animate__animated animate__heartBeat logo-print" width="55">
 </div>
 <div class="container">
 <div class="row">
@@ -84,14 +135,18 @@ body {
  <h1>Sergejs Patriks Vosels</h1>
  </div>
  <div class="col-12">
- <div class="d-flex justify-content-center"><div class=" p-2"><a href="tel:+447931096001">+44(0)7 931 096 001</a></div><div class="p-2"><a href="mailto:spv@lad8s.com">spv@lad8s.com</a></div><div class=" p-2">W10 London</div></div>
+ <div class="d-flex justify-content-center"><div class=" p-2"><a href="tel:+447931096001">+44(0)7 931 096 001</a></div><div class="p-2"><a href="mailto:spv@lad8s.com">spv@lad8s.com</a></div><div class="p-2"><a href="https://www.linkedin.com/in/sergejsvosels/" target="_blank">linkedin.com/in/sergejsvosels</a></div><div class=" p-2">W10 London</div></div>
 </div>
  <div class="col-12">
  <h4><i class="fas fa-user-circle"></i> Personal statement:</h4>
        <p>
-        With 5+ years of experience in quality assurance software engineering and technical project management, I am a customer-focused professional who consistently delivers solutions that enhance customer satisfaction and loyalty. I have successfully led cross-functional teams, managing backlog reviews, sprint planning, and daily stand-ups, driving a 41% increase in test case coverage. My strong problem-solving and analytical skills allow me to tackle complex technical challenges while communicating solutions clearly to non-technical staff. I am passionate about fostering a culture of excellence and am seeking a challenging position where I can leverage my leadership experience to drive continuous improvement and deliver high-quality results.
+        With 5+ years of experience in quality assurance software engineering and technical project management, I am a customer-focused professional who consistently delivers solutions that enhance customer satisfaction and loyalty. 
+        I have successfully led cross-functional teams, managing backlog reviews, sprint planning, and daily stand-ups, driving a 41% increase in test case coverage. 
+        My strong problem-solving and analytical skills allow me to tackle complex technical challenges while communicating solutions clearly to non-technical staff. 
+        Currently, I am leading mobile team and actively progressing toward an Engineering Manager role, contributing to both technical execution and broader strategic initiatives.
+        I am passionate about fostering a culture of excellence and am seeking a challenging position where I can leverage my leadership experience to drive continuous improvement and deliver high-quality results.
     </p></div>
-<div class="col-12 col-lg-6">
+<div class="col-12 col-lg-6 col-print-6">
 <!-- <div class="col-6"> -->
 
  <h4><i class="fas fa-stream"></i> Areas of expertise:</h4>
@@ -100,10 +155,11 @@ body {
    <li>Team Management and Leadership: Proven ability to lead and motivate teams to deliver high-quality products on time and within budget, including setting up teams to address issues and bring improvements.</li>
   <li>Agile Methodologies: Experienced in working within Agile environments, using Scrum (Code freeze during Release) and Kanban methodologies (Jira) to improve development processes and drive continuous improvement.</li>
   <li>Bug prevention: Proactively anticipate issues with new features, initiate measures to ensure testability, advocate for early testing involvement, and provide quick feedback to streamline the development process.</li>
+  <li>Engineering Leadership & Growth: Actively involved in shaping cross-team collaboration and product quality metrics, running RCA sessions, team health checks, and retrospectives. Work closely with Engineering Managers and Directors on shared initiatives to promote team growth, delivery excellence, and organizational impact.</li>
   </ul>
  </div>
        
-      <div class="col-12 col-lg-6">
+      <div class="col-12 col-lg-6 col-print-6">
 <!-- <div class="col-6"> -->
 
   <h4><i class="fas fa-network-wired"></i> Skills:</h4>
@@ -123,13 +179,25 @@ body {
     <li>Ability to work effectively in a team environment</li>
     <li>Dedication to continuous learning and professional development</li>
     <li>Self-management, taking ownership and responsibility</li>
+    <li>Strategic thinking and initiative-taking, with a focus on long-term team and organizational performance improvements</li>
+    <li>Leadership presence in engineering forums and OKR planning, progressing toward Engineering Manager responsibilities</li>
   </ul>
       </div>
      <div class="col-12">
       <h4><i class="fas fa-briefcase"></i> Work experience:</h4>
-	      <h5>Quinyx - London (Sweden based company)</h5>
+	      <h5>Quinyx - London (Sweden based company; Team based in Serbia, Sweden and London)</h5>
  <h6>QA Automation Engineer 2023 - Present</h6>
- <h7>Technologies: 100% cloud based. Frontend - Javascript/Typescript, backend - Java/PHP, API, E2E, performance tests - Java/Jmeter, test cases - TestRail</h7>
+ <h7>Technologies: 100% cloud based. FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img title="Javascript" alt="Javascript" src="images/cv/JavaScript-logo.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Typescript" target="_blank"><img title="Typescript" src="images/cv/Typescript_logo_2020.svg.png" class="logo-tech"></a> 
+    BE: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=PHP" target="_blank"><img title="PHP" alt="PHP" src="images/cv/PHP.png" class="logo-tech"></a> 
+    API test: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> 
+    E2E tests: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> 
+    <a href="https://www.google.com/search?q=Selenium" target="_blank"><img title="Selenium" alt="Selenium" src="images/cv/861px-Selenium_Logo.png" class="logo-tech"></a> 
+    <a href="https://www.google.com/search?q=Appium" target="_blank"><img title="Appium" alt="Appium" src="images/cv/appium.webp" class="logo-tech"></a> 
+    Other: <a href="https://www.google.com/search?q=Jmeter" target="_blank"><img title="Jmeter" src="images/cv/jmeter_square.svg" class="logo-tech"></a> 
+    <a href="https://www.google.com/search?q=TestRail" target="_blank"><img title="TestRail" alt="TestRail" src="images/cv/TestRail.webp" class="logo-tech"></a> 
+    <a href="https://www.google.com/search?q=Superset" target="_blank"><img title="Superset" alt="Superset" src="images/cv/superset.png" class="logo-tech"></a> 
+    <a href="https://www.google.com/search?q=Jira" target="_blank"><img title="Jira" alt="Jira" src="images/cv/jira.png" class="logo-tech"></a>
+</h7>
 	<ul>
         <li>Actively lead the team by overseeing backlog reviews, sprint planning sessions, stand-ups, and retrospectives, ensuring alignment with project goals and timely delivery of features.</li>
         <li>Integrated data capture into testing, enabling data-driven decisions and led daily stand-ups/retrospectives for effective team alignment.</li>
@@ -138,21 +206,29 @@ body {
              <!--<li>Pioneered the introduction of performance testing, ensuring robust product performance and reliability.<li>-->
         <li>Fostered a collaborative team environment with contractors, which directly contributed to a 41% increase in our test case repository (from 128 to 181), enhancing our testing breadth.</li>
         <li>Initiated and maintained comprehensive documentation for automation setup, ensuring seamless onboarding.</li>
+        <li class="print-extraspace">Collaborated closely with the Engineering Director to enhance not just team performance, but quality and delivery standards across the broader engineering area and organisation.</li>
 	</ul>
      </div>
      <div class="col-12">
-            <h5>Symplectic - London</h5>
+            <h5 class="print-topspace">Symplectic - London</h5>
    <h6>QA Engineer 2021 - 2023</h6>
- <h7>Technologies: 100% on-premises. Frontend - Javascript/Typescript, backend - C#/.NET, API test - C#/.NET, E2E tests - Java , performance tests - Jmeter</h7>
+ <h7>Technologies: 100% on-premises. FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img title="Javascript" alt="Javascript" src="images/cv/JavaScript-logo.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Typescript" target="_blank"><img title="Typescript" src="images/cv/Typescript_logo_2020.svg.png" class="logo-tech"></a> BE: <a href="https://www.google.com/search?q=C%20sharp" target="_blank"><img title="C#/.NET" src="images/cv/Logo_C_sharp.svg" class="logo-tech"></a> API test: <a href="https://www.google.com/search?q=C%20sharp" target="_blank"><img title="C#/.NET" src="images/cv/Logo_C_sharp.svg" class="logo-tech"></a> E2E tests: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Selenium" target="_blank"><img title="Selenium" src="images/cv/861px-Selenium_Logo.png" class="logo-tech"></a> 
+    Other: <a href="https://www.google.com/search?q=Jmeter" target="_blank"><img title="Jmeter" src="images/cv/jmeter_square.svg" class="logo-tech"></a> 
+    <a href="https://www.google.com/search?q=Docker" target="_blank"><img title="Docker" alt="Docker" src="images/cv/Docker.avif" class="logo-tech"></a> 
+    <a href="https://www.google.com/search?q=Teamcity" target="_blank"><img title="Teamcity" alt="Teamcity" src="images/cv/TeamCity.png" class="logo-tech"></a> 
+    <a href="https://www.google.com/search?q=Ansible" target="_blank"><img title="Ansible" alt="Ansible" src="images/cv/Ansible.Default" class="logo-tech"></a> 
+    <a href="https://www.google.com/search?q=OWASP%20ZAP" target="_blank"><img title="OWASP ZAP" alt="OWASP ZAP" src="images/cv/Owasp_Zap.png" class="logo-tech"></a> 
+    <a href="https://www.google.com/search?q=Jira" target="_blank"><img title="Jira" alt="Jira" src="images/cv/jira.png" class="logo-tech"></a>
+</h7>
       <ul>
           <li>Designed and implemented a data-driven test automation suite for a public-facing solution used by clients, automating over 80% of the E2E tests, resulting in a significant reduction in bugs and enhanced overall performance.</li>
           <li>Upgraded and modified existing automation suite, reviewed code and black box, and GUI test cases.</li>
+          <li>Implemented OWASP ZAP as a proof of concept, running it alongside our E2E tests to identify vulnerabilities and potential security risks. After successful integration, it was adopted into the release pipeline and is actively used by the team to detect security flaws in future releases.</li>
           <li>Introduced performance testing for the public-facing solution to optimize website load times, resulting in improved user experience and customer satisfaction.</li>
           <li>Collaborated with cross-functional teams and business experts to define requirements, and contributed to process and architecture improvements.</li>
       </ul>
        </div>
 	    <div class="col-12">
-   <!-- <br><br> -->
 <h5>Thermostar UK - London</h5>
  <h6>Business Process Improvement Manager 2016 - 2021</h6>
  <ul>
@@ -212,8 +288,8 @@ body {
       <h4><i class="fas fa-folder-plus"></i> Hobbies and interests</h4>
       </div>
       <div class="col-12 col-sm-6 col-lg-3">
-      <h6><i class="far fa-window-restore"></i> Development</h6>
-      <p>Working on various websites, web-applications.</p>
+      <h6><i class="far fa-window-restore"></i> Industry Engagement</h6>
+      <p>Attending after work events on tech and leadership.</p>
       </div>
         <div class="col-12 col-sm-6 col-lg-3">
       <h6><i class="fas fa-video"></i> Production / Directing</h6>
@@ -221,12 +297,13 @@ body {
       </div>
           <div class="col-12 col-sm-6 col-lg-3">
       <h6><i class="fa-solid fa-person-running"></i> Sport activities</h6>
-      <p>Actively participate in various sport activities as well as member of gym.</p>
+      <p>Actively participating in various sport activities.</p>
       </div>
             <div class="col-12 col-sm-6 col-lg-3">
-            <h6><i class="fas fa-book-open"></i> Learning</h6>
-            <p>Learning various courses online by myself.</p>
+            <h6><i class="fas fa-book-open"></i> Reading</h6>
+            <p>Reading various books and articles around self development.</p>
             </div>
+            <br>
      <div class="col">
         <h4><i class="fa-solid fa-user-check"></i> Referenes</h4>
         <p>Available upon request</p>
@@ -237,6 +314,7 @@ body {
     </div>
     </div>
 </div>
+<p style="color:#E0DDCE">This was just added for fun, since this same colour as background, proud of you! :)</p>
 </body>
 <footer>
   <nav class="navbar justify-content-center" style="background-color:#E0DDCE">
