@@ -81,8 +81,29 @@ img.logo-tech:hover{
     opacity: 100%;
     cursor:pointer;
 }
+
+a.work-title {
+  color: inherit;          /* use parent text color */
+  text-decoration: none;   /* remove underline */
+  font: inherit;      
+}
+
+.work-title img {
+    height: 25px;
+    margin-top: -7px;
+    opacity: 50%;
+}
+
+.work-title:hover{
+    opacity: 100%;
+    cursor:pointer;
+    img{opacity: 100%;}
+} 
 @media print 
 {
+    .work-title img {
+        opacity: 100%;
+    }
     img.logo-tech {
     opacity: 80%;
     }
@@ -120,6 +141,14 @@ img.logo-tech:hover{
     z-index: 0;
 }
 }
+@media (max-width: 768px) {
+    img.logo-tech{
+    opacity: 100%;
+    }
+    .work-title img {
+        opacity: 100%;
+    }
+}
 </style>
     </head>
  
@@ -143,11 +172,10 @@ img.logo-tech:hover{
  <div class="col-12">
  <h4><i class="fas fa-user-circle"></i> Personal statement:</h4>
        <p>
-        With 5+ years of experience in quality assurance software engineering and technical project management, I am a customer-focused professional who consistently delivers solutions that enhance customer satisfaction and loyalty. 
-        I have successfully led cross-functional teams, managing backlog reviews, sprint planning, and daily stand-ups, driving a 41% increase in test case coverage. 
-        My strong problem-solving and analytical skills allow me to tackle complex technical challenges while communicating solutions clearly to non-technical staff. 
-        Currently, I am leading mobile team and actively progressing toward an Engineering Manager role, contributing to both technical execution and broader strategic initiatives.
-        I am passionate about fostering a culture of excellence and am seeking a challenging position where I can leverage my leadership experience to drive continuous improvement and deliver high-quality results.
+        With 5+ years of experience in quality assurance software engineering and technical project management, I deliver solutions that enhance customer satisfaction and loyalty.
+        I have led cross-functional teams through backlog reviews, sprint planning, and daily stand-ups, driving a 41% increase in test case coverage.
+        Currently stepping into Engineering Manager responsibilities, I am building on my leadership of a mobile team and preparing for full transition into the role.
+        I am passionate about fostering a culture of excellence, and I always push for excellence in my work, no matter what role I hold.
     </p></div>
 <div class="col-12 col-lg-6 col-print-6">
 <!-- <div class="col-6"> -->
@@ -188,22 +216,27 @@ img.logo-tech:hover{
       </div>
      <div class="col-12">
       <h4><i class="fas fa-briefcase"></i> Work experience:</h4>
-	      <h5>Quinyx - London (Sweden based company; Team based in Serbia, Sweden and London)</h5>
+	      <h5><a href="https://www.quinyx.com/" target="_blank"  class="work-title"><img title="Quinyx logo" alt="Quinyx logo" src="images/cv/quinyx-logo.webp"> Quinyx</a> - London (Sweden based company; Team based in Serbia, Sweden and London)</h5>
  <h6>QA Automation Engineer 2023 - Present</h6>
  <h7>Technologies: 100% cloud based. 
 <br class="d-lg-none d-sm-block d-print-none">
 FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img title="Javascript" alt="Javascript" src="images/cv/JavaScript-logo.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Typescript" target="_blank"><img title="Typescript" src="images/cv/Typescript_logo_2020.svg.png" class="logo-tech"></a> 
     BE: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=PHP" target="_blank"><img title="PHP" alt="PHP" src="images/cv/PHP.png" class="logo-tech"></a> 
-    <br class="d-lg-none d-sm-block d-print-none">
-    API test: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> 
+    API tests: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> 
+    <br class="d-lg-none d-sm-block">
     E2E tests: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Selenium" target="_blank"><img title="Selenium" alt="Selenium" src="images/cv/861px-Selenium_Logo.png" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Appium" target="_blank"><img title="Appium" alt="Appium" src="images/cv/appium.png" class="logo-tech"></a> 
+    AI: <a href="https://www.google.com/search?q=Gemini" target="_blank"><img title="Gemini" alt="Gemini" src="images/cv/gemini.webp" class="logo-tech"></a>  <a href="https://www.google.com/search?q=GitHub+Copilot" target="_blank"><img title="GitHub Copilot" alt="GitHub Copilot" src="images/cv/githubcopilot.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Cursor" target="_blank"><img title="Cursor" alt="Cursor" src="images/cv/cursor.jpg" class="logo-tech"></a>
     <br class="d-lg-none d-sm-block d-print-none">
     Other: <a href="https://www.google.com/search?q=Jmeter" target="_blank"><img title="Jmeter" src="images/cv/jmeter_square.svg" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=TestRail" target="_blank"><img title="TestRail" alt="TestRail" src="images/cv/TestRail.svg" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Superset" target="_blank"><img title="Superset" alt="Superset" src="images/cv/superset.png" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Jira" target="_blank"><img title="Jira" alt="Jira" src="images/cv/jira.png" class="logo-tech"></a>
+    <a href="https://www.google.com/search?q=Figma" target="_blank"><img title="Figma" alt="Figma" src="images/cv/figma.png" class="logo-tech"></a>
+    <a href="https://www.google.com/search?q=Retrium" target="_blank"><img title="Retrium" alt="Retrium" src="images/cv/retrium.png" class="logo-tech"></a>
+    <a href="https://www.google.com/search?q=Doorbell.io" target="_blank"><img title="Doorbell.io" alt="Doorbell.io" src="images/cv/doorbell.png" class="logo-tech"></a>
+    <a href="https://www.google.com/search?q=Gainsight" target="_blank"><img title="Gainsight" alt="Gainsight" src="images/cv/gainsight.png" class="logo-tech"></a>
 </h7>
 	<ul>
         <li>Actively lead the team by overseeing backlog reviews, sprint planning sessions, stand-ups, and retrospectives, ensuring alignment with project goals and timely delivery of features.</li>
@@ -217,7 +250,7 @@ FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img ti
 	</ul>
      </div>
      <div class="col-12">
-            <h5 class="print-topspace">Symplectic - London</h5>
+            <h5 class="print-topspace"><a href="https://www.symplectic.co.uk/" target="_blank"  class="work-title"><img title="Symplectic logo" alt="Symplectic logo" src="images/cv/symplectic-logo.png"> Symplectic</a> - London</h5>
    <h6>QA Engineer 2021 - 2023</h6>
  <h7>Technologies: 100% on-premises. 
 <br class="d-lg-none d-sm-block d-print-none">
@@ -225,7 +258,7 @@ FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img ti
     <a href="https://www.google.com/search?q=Typescript" target="_blank"><img title="Typescript" src="images/cv/Typescript_logo_2020.svg.png" class="logo-tech"></a> 
     BE: <a href="https://www.google.com/search?q=C%20sharp" target="_blank"><img title="C#/.NET" src="images/cv/Logo_C_sharp.svg" class="logo-tech"></a> 
     <br class="d-lg-none d-sm-block d-print-none">
-    API test: <a href="https://www.google.com/search?q=C%20sharp" target="_blank"><img title="C#/.NET" src="images/cv/Logo_C_sharp.svg" class="logo-tech"></a> 
+    API tests: <a href="https://www.google.com/search?q=C%20sharp" target="_blank"><img title="C#/.NET" src="images/cv/Logo_C_sharp.svg" class="logo-tech"></a> 
     E2E tests: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Selenium" target="_blank"><img title="Selenium" src="images/cv/861px-Selenium_Logo.png" class="logo-tech"></a> 
     <br class="d-lg-none d-sm-block d-print-none">
     Other: <a href="https://www.google.com/search?q=Jmeter" target="_blank"><img title="Jmeter" src="images/cv/jmeter_square.svg" class="logo-tech"></a> 
@@ -234,6 +267,7 @@ FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img ti
     <a href="https://www.google.com/search?q=Ansible" target="_blank"><img title="Ansible" alt="Ansible" src="images/cv/Ansible.Default" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=OWASP%20ZAP" target="_blank"><img title="OWASP ZAP" alt="OWASP ZAP" src="images/cv/Owasp_Zap.png" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Jira" target="_blank"><img title="Jira" alt="Jira" src="images/cv/jira.png" class="logo-tech"></a>
+    <a href="https://www.google.com/search?q=HotJar" target="_blank"><img title="HotJar" alt="HotJar" src="images/cv/hotjar.png" class="logo-tech"></a>
 </h7>
       <ul>
           <li>Designed and implemented a data-driven test automation suite for a public-facing solution used by clients, automating over 80% of the E2E tests, resulting in a significant reduction in bugs and enhanced overall performance.</li>
