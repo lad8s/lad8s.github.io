@@ -1,3 +1,39 @@
+<!-- 
+1 *Personal statement*
+1.1 I want to start from With 5+
+1.2 also to remove part  regardless of the role I hold?
+2 areas of exp..
+2.1 managing senior engineers to adjust (or too extra?)
+3 technical skills, does this section even makes sense for em cv?
+3.1 i dont know if programming anymore makes sense to add it at all? do engineering managers cv have it?
+3.2 does the Mobile & Platform Quality, databases, frameworks sections needed here?
+3.3 onboarding and hiring we can mention
+3.4 estimation practices to get rid of things in brackets
+4 soft skills
+4.1 inst stakeholder management same as stakeholder calibration? can we just keep it in areas of expertise and call it there stakeholder calibration and management and blend two ideas into one there
+5. 
+
+
+General:
+- I am considering to blend two like i had before into skills and then subsection technical and soft
+like this:
+  <h4><i class="fas fa-network-wired" aria-hidden="true"></i> Skills:</h4>
+  Technical Skills:
+       <ul>
+       <li>...
+        </ul>
+  Soft Skills:
+  <ul>
+    <li>...
+    </ul>
+      </div>
+
+
+- I am a people manager, should we mention it somewhere somehow, if so where and when give me like 3 suggestions 
+- I want to mention adoption of AI technologies into .... suggest me a few places and ways to say this
+
+
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,7 +41,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
-     <title>SPV - Senior QA Engineer • Aspiring Engineering Manager • Team & Quality Leader - CV</title>
+     <title>SPV - Engineering Manager • CV</title>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -59,6 +95,15 @@ body {
     .hori-timeline .events .event-list .event-date {
         top: -12px;
     }
+    .more-up{
+    margin-top: -20px;
+}
+    .more-up-2{
+    margin-top: -15px;
+}
+    .more-up-3{
+    margin-top: -5px;
+}
 }
 
 .bg-soft-danger {
@@ -99,6 +144,7 @@ a.work-title {
     cursor:pointer;
     img{opacity: 100%;}
 } 
+
 @media print 
 {
     .work-title img {
@@ -113,9 +159,24 @@ a.work-title {
     .print-topspace {
         margin-top: 50px;
     }
+    .print-topspace-2 {
+        margin-top: 20px;
+    }
     .col-print-6 {
         flex: 0 0 50%;
         max-width: 50%;
+    }
+    .col-print-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .col-print-5 {
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+    .col-print-7 {
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%;
     }
     .logo-print {
         margin-top: 5px;
@@ -140,6 +201,9 @@ a.work-title {
     background-color: #D7D0C8;
     z-index: 0;
 }
+    .more-up-2{
+    margin-top: -15px;
+}
 }
 @media (max-width: 768px) {
     img.logo-tech{
@@ -153,7 +217,7 @@ a.work-title {
     </head>
  
     <body>
-<div class="container-fluid text-center" type="top">
+<div class="container-fluid text-center  print-topspace-2" type="top">
     <!-- <br><br><br> -->
 <img src="images\logo\white_cropped.png" class="img-fluid animate__animated animate__heartBeat logo-print" width="55">
 </div>
@@ -170,98 +234,119 @@ a.work-title {
     <div class="text-center p-2">W10 London</div></div>
 </div>
  <div class="col-12">
- <h4><i class="fas fa-user-circle"></i> Personal statement:</h4>
-       <p>
-        With 5+ years of experience in quality assurance software engineering and technical project management, I deliver solutions that enhance customer satisfaction and loyalty.
-        I have led cross-functional teams through backlog reviews, sprint planning, and daily stand-ups, driving a 41% increase in test case coverage.
-        Currently stepping into Engineering Manager responsibilities, I am building on my leadership of a mobile team and preparing for full transition into the role.
-        I am passionate about fostering a culture of excellence, and I always push for excellence in my work, no matter what role I hold.
-    </p></div>
-<div class="col-12 col-lg-6 col-print-6">
-<!-- <div class="col-6"> -->
+<h4><i class="fas fa-user-circle"></i> Personal statement:</h4>
+<p>
+With 5+ years of experience across software engineering and technical leadership, I lead engineering teams focused on predictable delivery, clear processes, and continuous improvement. As an Engineering Manager, I collaborate closely with product and engineering leadership to align releases with company planning while strengthening release standards and delivery discipline. I focus on identifying gaps in delivery, quality, and automation, and working with the team to close them through practical improvements.
+I am passionate about fostering a culture of excellence and consistently raising the bar.
+</p>
+</div>
+<!-- <div class="col-12 col-lg-4 col-print-4"> -->
+<div class="col-12 col-lg-5 col-print-5">
 
- <h4><i class="fas fa-stream"></i> Areas of expertise:</h4>
-  <ul>
-   <li>Software Quality Assurance and Testing: Expert in designing and implementing manual and automated testing strategies, as well as introducing performance testing to improve the performance of public-facing solutions and automation of blackbox testing to reduce vulnerability risk.</li>
-   <li>Team Management and Leadership: Proven ability to lead and motivate teams to deliver high-quality products on time and within budget, including setting up teams to address issues and bring improvements.</li>
-  <li>Agile Methodologies: Experienced in working within Agile environments, using Scrum (Code freeze during Release) and Kanban methodologies (Jira) to improve development processes and drive continuous improvement.</li>
-  <li>Bug prevention: Proactively anticipate issues with new features, initiate measures to ensure testability, advocate for early testing involvement, and provide quick feedback to streamline the development process.</li>
-  <li>Engineering Leadership & Growth: Actively involved in shaping cross-team collaboration and product quality metrics, running RCA sessions, team health checks, and retrospectives. Work closely with Engineering Managers and Directors on shared initiatives to promote team growth, delivery excellence, and organizational impact.</li>
-  </ul>
+<h4><i class="fas fa-stream"></i> Areas of expertise:</h4>
+<ul>
+<li>Engineering Leadership: Managing engineers through structured 1:1s, clear expectations, continuous feedback, and accountability for delivery and growth.</li>
+<li>Agile Delivery & Roadmap Alignment: Owning engineering delivery within Scrum and Kanban environments, ensuring technical initiatives are visible and prioritised alongside product work.</li>
+<li>Quality & Reliability: Strengthening release standards, automation practices, and monitoring to maintain stable and reliable systems.</li>
+<li>Stakeholder Collaboration: Partnering with Product, Sales, Customer Support, and Engineering leadership to align engineering work with business priorities.</li>
+</ul>
  </div>
        
-      <div class="col-12 col-lg-6 col-print-6">
-<!-- <div class="col-6"> -->
+      <!-- <div class="col-12 col-lg-4 col-print-4"> -->
+<div class="col-12 col-lg-7 col-print-7">
 
-  <h4><i class="fas fa-network-wired"></i> Skills:</h4>
-  Technical Skills:
-       <ul>
-       <li>Proficient in programming languages such as Java, Python, JavaScript and gained experience working with .NET Core with C# on a personal project for 5 months</li>
-       <li>Experienced in database management systems such as Azure SQL and MySQL Workbench</li>
-       <li>Skilled in web development frameworks such as React</li>
-       <li>Knowledgeable in software testing methodologies including performance testing and test automation</li>
-       <li>Familiarity with DevOps tools such as Docker, Ansible and GitHub Actions</li>
-       <li>Strong understanding of agile development principles</li>
-        </ul>
-  Soft Skills:
-  <ul>
-    <li>Excellent communication and collaboration skills</li>
-    <li>Strong problem-solving and analytical skills</li>
-    <li>Ability to work effectively in a team environment</li>
-    <li>Dedication to continuous learning and professional development</li>
-    <li>Self-management, taking ownership and responsibility</li>
-    <li>Strategic thinking and initiative-taking, with a focus on long-term team and organizational performance improvements</li>
-    <li>Leadership presence in engineering forums and OKR planning, progressing toward Engineering Manager responsibilities</li>
-  </ul>
+  <h4><i class="fas fa-network-wired"></i> Technical Skills:</h4>
+<div class="more-up-3">Leadership & Delivery</div>
+<ul>
+<li>Engineering team leadership and development</li>
+<li>Delivery planning and release coordination within Agile environments</li>
+<li>Scope and timeline alignment with Product under constrained resources</li>
+<li>Hiring participation including candidate review and technical interviews</li>
+<li>Process design and improvement (Definition of Ready, Definition of Done, release structure)</li>
+<li>Continuous improvement using delivery, quality, and stability insights</li>
+<li>Supporting team experimentation with AI-assisted development tools</li>
+</ul>
+<div class="more-up-2">Technical Foundations</div>
+<ul>
+<li>Mobile development environments (iOS and Android ecosystems)</li>
+<li>Test automation strategy and quality engineering practices</li>
+<li>CI/CD pipelines and DevOps workflows</li>
+<li>Observability, monitoring, and production reliability awareness</li>
+<li>Linux environments and scripting</li>
+<li>Self-hosted infrastructure and Raspberry Pi experimentation</li>
+</ul>
       </div>
      <div class="col-12">
       <h4><i class="fas fa-briefcase"></i> Work experience:</h4>
-	      <h5><a href="https://www.quinyx.com/" target="_blank"  class="work-title"><img title="Quinyx logo" alt="Quinyx logo" src="images/cv/quinyx-logo.webp"> Quinyx</a> - London (Sweden based company; Team based in Serbia, Sweden and London)</h5>
- <h6>QA Automation Engineer 2023 - Present</h6>
+	      <h5><a href="https://www.quinyx.com/" target="_blank"  class="work-title"><img title="Quinyx logo" alt="Quinyx logo" src="images/cv/quinyx-logo.webp"> Quinyx</a> - London (Sweden based company; Team based in Serbia, Bosnia, London and Germany)</h5>
  <h7>Technologies: 100% cloud based. 
 <br class="d-lg-none d-sm-block d-print-none">
 FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img title="Javascript" alt="Javascript" src="images/cv/JavaScript-logo.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Typescript" target="_blank"><img title="Typescript" src="images/cv/Typescript_logo_2020.svg.png" class="logo-tech"></a> 
     BE: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=PHP" target="_blank"><img title="PHP" alt="PHP" src="images/cv/PHP.png" class="logo-tech"></a> 
-    API tests: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> 
-    <br class="d-lg-none d-sm-block">
+    <!-- API tests: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a>  -->
+    <!-- <br class="d-lg-none d-sm-block">
     E2E tests: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Selenium" target="_blank"><img title="Selenium" alt="Selenium" src="images/cv/861px-Selenium_Logo.png" class="logo-tech"></a> 
-    <a href="https://www.google.com/search?q=Appium" target="_blank"><img title="Appium" alt="Appium" src="images/cv/appium.png" class="logo-tech"></a> 
-    AI: <a href="https://www.google.com/search?q=Gemini" target="_blank"><img title="Gemini" alt="Gemini" src="images/cv/gemini.webp" class="logo-tech"></a>  <a href="https://www.google.com/search?q=GitHub+Copilot" target="_blank"><img title="GitHub Copilot" alt="GitHub Copilot" src="images/cv/githubcopilot.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Cursor" target="_blank"><img title="Cursor" alt="Cursor" src="images/cv/cursor.jpg" class="logo-tech"></a>
+    <a href="https://www.google.com/search?q=Appium" target="_blank"><img title="Appium" alt="Appium" src="images/cv/appium.png" class="logo-tech"></a>  -->
+    AI: 
+    <a href="https://www.google.com/search?q=Claude+Code" target="_blank"><img title="Claude Code" alt="Claude Code" src="images/cv/claude.png" class="logo-tech"></a>  
+    <a href="https://www.google.com/search?q=Granola+AI" target="_blank"><img title="Granola AI" alt="Granola AI" src="images/cv/granola.jpg" class="logo-tech"></a>  
+    <a href="https://www.google.com/search?q=Gemini" target="_blank"><img title="Gemini" alt="Gemini" src="images/cv/gemini.webp" class="logo-tech"></a>  
+    <a href="https://www.google.com/search?q=GitHub+Copilot" target="_blank"><img title="GitHub Copilot" alt="GitHub Copilot" src="images/cv/githubcopilot.png" class="logo-tech"></a>
+    <a href="https://www.google.com/search?q=Cursor" target="_blank"><img title="Cursor" alt="Cursor" src="images/cv/cursor.jpg" class="logo-tech"></a>
     <br class="d-lg-none d-sm-block d-print-none">
-    Other: <a href="https://www.google.com/search?q=Jmeter" target="_blank"><img title="Jmeter" src="images/cv/jmeter_square.svg" class="logo-tech"></a> 
+    Other: 
+    <!-- <a href="https://www.google.com/search?q=Jmeter" target="_blank"><img title="Jmeter" src="images/cv/jmeter_square.svg" class="logo-tech"></a>  -->
     <a href="https://www.google.com/search?q=TestRail" target="_blank"><img title="TestRail" alt="TestRail" src="images/cv/TestRail.svg" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Superset" target="_blank"><img title="Superset" alt="Superset" src="images/cv/superset.png" class="logo-tech"></a> 
-    <a href="https://www.google.com/search?q=Jira" target="_blank"><img title="Jira" alt="Jira" src="images/cv/jira.png" class="logo-tech"></a>
+    <a href="https://www.   google.com/search?q=Jira" target="_blank"><img title="Jira" alt="Jira" src="images/cv/jira.png" class="logo-tech"></a>
     <a href="https://www.google.com/search?q=Figma" target="_blank"><img title="Figma" alt="Figma" src="images/cv/figma.png" class="logo-tech"></a>
     <a href="https://www.google.com/search?q=Retrium" target="_blank"><img title="Retrium" alt="Retrium" src="images/cv/retrium.png" class="logo-tech"></a>
     <a href="https://www.google.com/search?q=Doorbell.io" target="_blank"><img title="Doorbell.io" alt="Doorbell.io" src="images/cv/doorbell.png" class="logo-tech"></a>
     <a href="https://www.google.com/search?q=Gainsight" target="_blank"><img title="Gainsight" alt="Gainsight" src="images/cv/gainsight.png" class="logo-tech"></a>
 </h7>
+ <h6>Engineering Manager (Promoted from Interim Engineering Manager) 2025 - Present</h6>
+<ul>
+<li>
+Lead a mobile engineering team of 6 engineers responsible for development and release of customer-facing mobile applications.
+</li><li>
+Introduced clearer delivery processes and sprint structure, improving release predictability and aligning mobile planning with wider company release cycles.
+</li><li>
+Worked closely with Product to balance roadmap ambitions with realistic engineering capacity, protecting delivery stability under limited QA resources.
+</li><li>
+Strengthened release standards by introducing clearer readiness checks and quality gates to reduce last-minute instability.
+</li><li>
+Participated in hiring processes including candidate review, technical interviews, and collaborative hiring decisions with engineering peers.
+</li>
+<li>Encouraged team experimentation with AI-assisted development tools and knowledge sharing of practical use cases.</li>
+</ul>
+ <h6>QA Automation Engineer 2023 - 2025</h6>
 	<ul>
-        <li>Actively lead the team by overseeing backlog reviews, sprint planning sessions, stand-ups, and retrospectives, ensuring alignment with project goals and timely delivery of features.</li>
-        <li>Integrated data capture into testing, enabling data-driven decisions and led daily stand-ups/retrospectives for effective team alignment.</li>
-		<li>Led E2E testing, empowering cross-functional teams to own their testing processes, including guiding backend developers in API testing.</li>
-        <li>Proactively maintained and upgraded E2E testing methodologies, leading to improved test coverage and effectiveness of 52% of regression for both platforms Android and iOS.</li>
-             <!--<li>Pioneered the introduction of performance testing, ensuring robust product performance and reliability.<li>-->
-        <li>Fostered a collaborative team environment with contractors, which directly contributed to a 41% increase in our test case repository (from 128 to 181), enhancing our testing breadth.</li>
-        <li>Initiated and maintained comprehensive documentation for automation setup, ensuring seamless onboarding.</li>
-        <li class="print-extraspace">Collaborated closely with the Engineering Director to enhance not just team performance, but quality and delivery standards across the broader engineering area and organisation.</li>
-	</ul>
+<li>Led automation initiatives for mobile and backend systems, rebuilding end-to-end test coverage to 52%.
+</li><li>
+Established structured quality tracking and reporting to increase visibility of release readiness and product stability.
+</li><li>
+Identified and escalated release-blocking issues, preventing unstable versions from reaching production.
+</li><li>
+Introduced improvements to support and testing workflows, including rotating responsibilities within the team to balance operational load.
+</li><li>
+Contributed to improving quality practices adopted across the wider engineering area.
+</li>
+</ul>
      </div>
      <div class="col-12">
-            <h5 class="print-topspace"><a href="https://www.symplectic.co.uk/" target="_blank"  class="work-title"><img title="Symplectic logo" alt="Symplectic logo" src="images/cv/symplectic-logo.png"> Symplectic</a> - London</h5>
-   <h6>QA Engineer 2021 - 2023</h6>
+            <h5><a href="https://www.symplectic.co.uk/" target="_blank"  class="work-title"><img title="Symplectic logo" alt="Symplectic logo" src="images/cv/symplectic-logo.png"> Symplectic</a> - London</h5>
  <h7>Technologies: 100% on-premises. 
 <br class="d-lg-none d-sm-block d-print-none">
 FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img title="Javascript" alt="Javascript" src="images/cv/JavaScript-logo.png" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Typescript" target="_blank"><img title="Typescript" src="images/cv/Typescript_logo_2020.svg.png" class="logo-tech"></a> 
     BE: <a href="https://www.google.com/search?q=C%20sharp" target="_blank"><img title="C#/.NET" src="images/cv/Logo_C_sharp.svg" class="logo-tech"></a> 
+    <!-- <br class="d-lg-none d-sm-block d-print-none"> -->
+    <!-- API tests: <a href="https://www.google.com/search?q=C%20sharp" target="_blank"><img title="C#/.NET" src="images/cv/Logo_C_sharp.svg" class="logo-tech"></a>  -->
+    <!-- E2E tests: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Selenium" target="_blank"><img title="Selenium" src="images/cv/861px-Selenium_Logo.png" class="logo-tech"></a>  -->
     <br class="d-lg-none d-sm-block d-print-none">
-    API tests: <a href="https://www.google.com/search?q=C%20sharp" target="_blank"><img title="C#/.NET" src="images/cv/Logo_C_sharp.svg" class="logo-tech"></a> 
-    E2E tests: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Selenium" target="_blank"><img title="Selenium" src="images/cv/861px-Selenium_Logo.png" class="logo-tech"></a> 
-    <br class="d-lg-none d-sm-block d-print-none">
-    Other: <a href="https://www.google.com/search?q=Jmeter" target="_blank"><img title="Jmeter" src="images/cv/jmeter_square.svg" class="logo-tech"></a> 
+    Other: 
+    <!-- <a href="https://www.google.com/search?q=Jmeter" target="_blank"><img title="Jmeter" src="images/cv/jmeter_square.svg" class="logo-tech"></a>  -->
     <a href="https://www.google.com/search?q=Docker" target="_blank"><img title="Docker" alt="Docker" src="images/cv/Docker.png" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Teamcity" target="_blank"><img title="Teamcity" alt="Teamcity" src="images/cv/TeamCity.png" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Ansible" target="_blank"><img title="Ansible" alt="Ansible" src="images/cv/Ansible.Default" class="logo-tech"></a> 
@@ -269,23 +354,27 @@ FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img ti
     <a href="https://www.google.com/search?q=Jira" target="_blank"><img title="Jira" alt="Jira" src="images/cv/jira.png" class="logo-tech"></a>
     <a href="https://www.google.com/search?q=HotJar" target="_blank"><img title="HotJar" alt="HotJar" src="images/cv/hotjar.png" class="logo-tech"></a>
 </h7>
-      <ul>
-          <li>Designed and implemented a data-driven test automation suite for a public-facing solution used by clients, automating over 80% of the E2E tests, resulting in a significant reduction in bugs and enhanced overall performance.</li>
-          <li>Upgraded and modified existing automation suite, reviewed code and black box, and GUI test cases.</li>
-          <li>Implemented OWASP ZAP as a proof of concept, running it alongside our E2E tests to identify vulnerabilities and potential security risks. After successful integration, it was adopted into the release pipeline and is actively used by the team to detect security flaws in future releases.</li>
-          <li>Introduced performance testing for the public-facing solution to optimize website load times, resulting in improved user experience and customer satisfaction.</li>
-          <li>Collaborated with cross-functional teams and business experts to define requirements, and contributed to process and architecture improvements.</li>
-      </ul>
+   <h6>QA Engineer (Promoted from Junior QA Engineer) 2021 - 2023</h6>
+<ul>
+<li>Designed and implemented a scalable automation framework for a public-facing platform, significantly reducing regression effort and improving release confidence.</li>
+<li>Integrated security testing (OWASP ZAP) into the CI/CD pipeline, strengthening vulnerability detection and release safety.</li>
+<li>Introduced performance testing to improve system responsiveness and production stability.</li>
+<li>Collaborated with engineers and business stakeholders to refine requirements and support technical decision-making.</li>
+</ul>
        </div>
 	    <div class="col-12">
-<h5>Thermostar UK - London</h5>
+<h5 class="print-topspace">Thermostar UK - London</h5>
  <h6>Business Process Improvement Manager 2016 - 2021</h6>
- <ul>
-    <li>Conducted quality assurance assessments on new system designs to ensure compliance with functional and technical requirements, improving deliverable quality.</li>
-  <li>Spearheaded technical architecture and infrastructure developments, providing expert consultation to the management team on system design and feasibility.</li>
-  <li>Developed and maintained system technical architectures based on business needs, resulting in successful delivery of proposed work within tight deadlines.</li>
-  <li>Hired, guided and mentored junior consultants, improving their performance and efficiency.</li>
- </ul>
+ <ul><li>
+Managed operational processes supporting field sales teams, including onboarding and coordination of call makers and interns.
+</li><li>
+Designed and implemented workflow automation connecting spreadsheets and calendars using Zapier to streamline booking and scheduling of product demonstrations.
+</li><li>
+Improved organisation and visibility of sales appointments, helping maintain consistently full booking schedules for field representatives.
+</li><li>
+Worked directly with the company owner to improve operational efficiency and support rapid scaling of sales activities.
+</li>
+</ul>
      </div>
     <div class="col-lg-12">
      <h4><i class="fas fa-graduation-cap"></i> Education</h4>
@@ -367,10 +456,11 @@ FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img ti
 <footer>
   <nav class="navbar justify-content-center" style="background-color:#E0DDCE">
   Contact me:
- <a class="nav-link" href="http://m.me/sergej.lados" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
-  <a class="nav-link" href="http://instagram.com/lad8s" target="_blank"><i class="fab fa-instagram"></i></a>
+ <!-- <a class="nav-link" href="http://m.me/sergej.lados" target="_blank"><i class="fab fa-facebook-messenger"></i></a> -->
+  <!-- <a class="nav-link" href="http://instagram.com/lad8s" target="_blank"><i class="fab fa-instagram"></i></a> -->
+  <a class="nav-link" href="tel:+447931096001"><i class="fas fa-phone"></i></a>
   <a class="nav-link" href="mailto:lad8s@lad8s.com"><i class="fas fa-envelope"></i></a>
-   <a class="nav-link" href="http://twitter.com/lad8s" target="_blank"><i class="fab fa-twitter"></i></a>
+   <!-- <a class="nav-link" href="http://twitter.com/lad8s" target="_blank"><i class="fab fa-twitter"></i></a> -->
 </nav>
 </nav>
 </footer>
