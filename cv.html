@@ -144,9 +144,18 @@ a.work-title {
     cursor:pointer;
     img{opacity: 100%;}
 } 
+.print-only {
+    display: none !important;
+}
 
 @media print 
 {
+    .print-only {
+        display: block !important;
+    }
+    .print-none {
+        display: none !important;
+    }
     .work-title img {
         opacity: 100%;
     }
@@ -235,10 +244,11 @@ a.work-title {
 </div>
  <div class="col-12">
 <h4><i class="fas fa-user-circle"></i> Personal statement:</h4>
-<p>
+<p>Engineering Manager with 5+ years of experience leading cross-functional teams in high-growth environments. Expert in transforming engineering delivery through structured processes, quality-first leadership, and radical transparency. Proven track record of scaling engineering organizations by fixing delivery bottlenecks, aligning technical roadmaps with business goals, and fostering high-performance cultures. Currently leading mobile engineering at Quinyx, focused on predictable shipping and engineering excellence.</p>
+<!-- <p>
 With 5+ years of experience across software engineering and technical leadership, I lead engineering teams focused on predictable delivery, clear processes, and continuous improvement. As an Engineering Manager, I collaborate closely with product and engineering leadership to align releases with company planning while strengthening release standards and delivery discipline. I focus on identifying gaps in delivery, quality, and automation, and working with the team to close them through practical improvements.
 I am passionate about fostering a culture of excellence and consistently raising the bar.
-</p>
+</p> -->
 </div>
 <!-- <div class="col-12 col-lg-4 col-print-4"> -->
 <div class="col-12 col-lg-5 col-print-5">
@@ -279,7 +289,14 @@ I am passionate about fostering a culture of excellence and consistently raising
      <div class="col-12">
       <h4><i class="fas fa-briefcase"></i> Work experience:</h4>
 	      <h5><a href="https://www.quinyx.com/" target="_blank"  class="work-title"><img title="Quinyx logo" alt="Quinyx logo" src="images/cv/quinyx-logo.webp"> Quinyx</a> - London (Sweden based company; Team based in Serbia, Bosnia, London and Germany)</h5>
- <h7>Technologies: 100% cloud based. 
+ <h7 class="print-only">
+    Technologies: 100% cloud based. 
+    Front End: Javascript, Typescript. 
+    Back End: Java, PHP, Go. Mobile: Kotlin, Java, Swift, Objective C. 
+    <br>AI: Claude Code, Granola AI, Gemini, Github Copilot, Cursor. 
+    <br>Other: AWS, Jira, Confluence, Figma, Retrium, Doorbell.io, Gainsight, Superset, TestRail, OpenSearch.
+ </h7>
+          <h7 class="print-none">Technologies: 100% cloud based. 
 <br class="d-lg-none d-sm-block d-print-none">
 FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img title="Javascript" alt="Javascript" src="images/cv/JavaScript-logo.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=Typescript" target="_blank"><img title="Typescript" src="images/cv/Typescript_logo_2020.svg.png" class="logo-tech"></a> 
     BE: <a href="https://www.google.com/search?q=Java" target="_blank"><img title="Java" src="images/cv/Java-Logo-700x394.png" class="logo-tech"></a> <a href="https://www.google.com/search?q=PHP" target="_blank"><img title="PHP" alt="PHP" src="images/cv/PHP.png" class="logo-tech"></a> 
@@ -305,9 +322,15 @@ FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img ti
     <a href="https://www.google.com/search?q=Doorbell.io" target="_blank"><img title="Doorbell.io" alt="Doorbell.io" src="images/cv/doorbell.png" class="logo-tech"></a>
     <a href="https://www.google.com/search?q=Gainsight" target="_blank"><img title="Gainsight" alt="Gainsight" src="images/cv/gainsight.png" class="logo-tech"></a>
 </h7>
- <h6>Engineering Manager (Promoted from Interim Engineering Manager) 2025 - Present</h6>
-<ul>
-<li>
+ <h6>Engineering Manager 2025 - Present</h6>
+<p>Note: Originally joined to resolve a critical quality bottleneck. After successfully rebuilding the automation infrastructure (increasing coverage to 52%) and stabilizing the release cycle, I was promoted to EM to apply that same delivery discipline across the entire mobile engineering squad.</p>
+ <ul>
+<li>Team Leadership: Lead a distributed mobile squad of 6 engineers (iOS/Android), driving predictable delivery and growth through structured feedback loops and high accountability.</li>
+<li>Delivery Excellence: Redesigned sprint structures and release workflows, improving release predictability and aligning mobile planning with global company cycles.</li>
+<li>Strategic Alignment: Partner with Product leadership to translate business objectives into technical roadmaps, managing capacity planning and trade-offs under resource constraints.</li>
+<li>Organizational Impact: Established "Quality Gates" and release standards that reduced production instability and are now adopted across the wider engineering area.</li>
+<li>Talent & Innovation: Lead technical hiring and onboarding for the mobile team; championing AI-assisted development tools to increase developer velocity.</li>
+<!-- <li>
 Lead a mobile engineering team of 6 engineers responsible for development and release of customer-facing mobile applications.
 </li><li>
 Introduced clearer delivery processes and sprint structure, improving release predictability and aligning mobile planning with wider company release cycles.
@@ -318,7 +341,7 @@ Strengthened release standards by introducing clearer readiness checks and quali
 </li><li>
 Participated in hiring processes including candidate review, technical interviews, and collaborative hiring decisions with engineering peers.
 </li>
-<li>Encouraged team experimentation with AI-assisted development tools and knowledge sharing of practical use cases.</li>
+<li>Encouraged team experimentation with AI-assisted development tools and knowledge sharing of practical use cases.</li> -->
 </ul>
  <h6>QA Automation Engineer 2023 - 2025</h6>
 	<ul>
@@ -334,9 +357,15 @@ Contributed to improving quality practices adopted across the wider engineering 
 </li>
 </ul>
      </div>
+     <forAspace class="print-extraspace"></forAspace>
      <div class="col-12">
-            <h5><a href="https://www.symplectic.co.uk/" target="_blank"  class="work-title"><img title="Symplectic logo" alt="Symplectic logo" src="images/cv/symplectic-logo.png"> Symplectic</a> - London</h5>
- <h7>Technologies: 100% on-premises. 
+            <h5 class="print-topspace"><a href="https://www.symplectic.co.uk/" target="_blank"  class="work-title"><img title="Symplectic logo" alt="Symplectic logo" src="images/cv/symplectic-logo.png"> Symplectic</a> - London</h5>
+  <h7 class="print-only">
+    Technologies: 80% on-premises, 20% cloud based.
+    Tech stack: C#/.NET, Javascript, Typescript, React Native.
+    <br>Other: Docker, Teamcity, Ansible, OWASP ZAP, Jira, HotJar.
+ </h7>
+<h7 class="print-none">Technologies: 80% on-premises, 20% cloud based.
 <br class="d-lg-none d-sm-block d-print-none">
 FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img title="Javascript" alt="Javascript" src="images/cv/JavaScript-logo.png" class="logo-tech"></a> 
     <a href="https://www.google.com/search?q=Typescript" target="_blank"><img title="Typescript" src="images/cv/Typescript_logo_2020.svg.png" class="logo-tech"></a> 
@@ -354,7 +383,7 @@ FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img ti
     <a href="https://www.google.com/search?q=Jira" target="_blank"><img title="Jira" alt="Jira" src="images/cv/jira.png" class="logo-tech"></a>
     <a href="https://www.google.com/search?q=HotJar" target="_blank"><img title="HotJar" alt="HotJar" src="images/cv/hotjar.png" class="logo-tech"></a>
 </h7>
-   <h6>QA Engineer (Promoted from Junior QA Engineer) 2021 - 2023</h6>
+   <h6>QA Engineer 2021 - 2023</h6>
 <ul>
 <li>Designed and implemented a scalable automation framework for a public-facing platform, significantly reducing regression effort and improving release confidence.</li>
 <li>Integrated security testing (OWASP ZAP) into the CI/CD pipeline, strengthening vulnerability detection and release safety.</li>
@@ -363,7 +392,7 @@ FE: <a href="https://www.google.com/search?q=Javascript" target="_blank"><img ti
 </ul>
        </div>
 	    <div class="col-12">
-<h5 class="print-topspace">Thermostar UK - London</h5>
+<h5>Thermostar UK - London</h5>
  <h6>Business Process Improvement Manager 2016 - 2021</h6>
  <ul><li>
 Managed operational processes supporting field sales teams, including onboarding and coordination of call makers and interns.
@@ -404,7 +433,7 @@ Worked directly with the company owner to improve operational efficiency and sup
                                 <div class="event-date bg-soft-danger">Nov 2011 - Jun 2013</div>
                                 <h5 class="font-size-16">Phoenix Academy Sixth Form</h5>
                                 <p>A levels</p>
-                                <p class="text-muted">Maths, Physics, Media and business studies</p>
+                                <p class="text-muted">Maths, Physics, Media Studies, Business Studies</p>
                                
                             </div>
                         </li><li class="list-inline-item event-list">
@@ -448,7 +477,7 @@ Worked directly with the company owner to improve operational efficiency and sup
      </div>
      <div class="col">
         <h4><i class="fa-solid fa-file"></i> Documents</h4>
-        <p>British and European union citizen</p>
+        <p>British and European Union citizen</p>
     </div>
     </div>
 </div>
