@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sergejs & Silvia — Wedding</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, serif;
+      background: #faf8f3;
+      color: #3a3028;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-size: 2.4em;
+      font-weight: normal;
+      letter-spacing: 0.12em;
+      color: #7a5c3a;
+    }
+
+    header p {
+      color: #a08060;
+      margin-top: 8px;
+      letter-spacing: 0.08em;
+      font-size: 0.95em;
+    }
+
+    .cards {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      background: #fff8ee;
+      border: 1px solid #ddd0bb;
+      border-radius: 10px;
+      padding: 32px 40px;
+      width: 220px;
+      text-align: center;
+      color: #7a5c3a;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .card:hover {
+      border-color: #c9a87a;
+      background: #fff3e0;
+      box-shadow: 0 4px 16px rgba(201,168,122,0.18);
+    }
+
+    .card-icon {
+      font-size: 2em;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 1em;
+      letter-spacing: 0.08em;
+      font-weight: normal;
+    }
+
+    .card-sub {
+      font-size: 0.75em;
+      color: #b09070;
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sergejs ♥ Silvia</h1>
+    <p>26 June 2026</p>
+  </header>
+
+  <div class="cards">
+    <a class="card" href="wedding/seating-plan.html">
+      <span class="card-icon">⛪</span>
+      <div class="card-title">Seating Plan</div>
+      <div class="card-sub">Ceremony</div>
+    </a>
+    <a class="card" href="wedding/tables.html">
+      <span class="card-icon">🍽️</span>
+      <div class="card-title">Table Plan</div>
+      <div class="card-sub">Reception</div>
+    </a>
+  </div>
+
+</body>
+</html>
