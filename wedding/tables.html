@@ -1,0 +1,513 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Sergejs &amp; Silvia – Table Plan</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, serif;
+      background: #faf8f3;
+      color: #3a3028;
+      padding: 30px 20px 50px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      font-weight: normal;
+      letter-spacing: 0.1em;
+      color: #7a5c3a;
+    }
+
+    header p {
+      color: #a08060;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+      font-size: 0.95em;
+    }
+
+    /* ── Shared seat style ── */
+    .seat {
+      background: #fff;
+      border: 1px solid #ddd0bb;
+      border-radius: 6px;
+      padding: 6px 8px;
+      min-height: 42px;
+      width: 80px;
+      font-size: 0.8em;
+      text-align: center;
+      cursor: text;
+      outline: none;
+      line-height: 1.4;
+      word-break: break-word;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .seat:empty::before {
+      content: attr(data-placeholder);
+      color: #ccc;
+      font-style: italic;
+    }
+
+    .seat:focus {
+      border-color: #c9a87a;
+      box-shadow: 0 0 0 2px rgba(201,168,122,0.2);
+    }
+
+    /* ── Table label ── */
+    .table-label {
+      font-size: 0.72em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #b09070;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    /* ── Rectangle table ── */
+    .rect-wrap {
+      max-width: 580px;
+      margin: 0 auto 60px;
+    }
+
+    .rect-seats {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .rect-body {
+      margin: 8px auto;
+      background: #fff8ee;
+      border: 2px solid #c9a87a;
+      border-radius: 10px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b09070;
+      font-size: 0.78em;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── Round tables ── */
+    .round-layout {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .round-wrap {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      flex-shrink: 0;
+    }
+
+    .round-body {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #fff8ee;
+      border: 2px solid #c9a87a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b09070;
+      font-size: 0.78em;
+      letter-spacing: 0.1em;
+      pointer-events: none;
+    }
+
+    .round-seat {
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+
+    /* ── Room ── */
+    .room {
+      position: relative;
+      border: 2px solid #c9b89a;
+      border-radius: 6px;
+      padding: 30px 50px 40px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* Window — top wall, almost full width */
+    .room-window {
+      position: absolute;
+      top: -2px;
+      left: 5%;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .window-bar {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 13px;
+      background: #faf8f3;
+      border-left: 2px solid #7ab8c8;
+      border-right: 2px solid #7ab8c8;
+    }
+
+    .window-bar span {
+      flex: 1;
+      border-right: 2px solid #7ab8c8;
+    }
+
+    .window-bar span:last-child { border-right: none; }
+
+    .room-window .wall-label {
+      font-size: 0.65em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7ab8c8;
+      margin-top: 2px;
+    }
+
+    /* Door left — left wall, vertically centered */
+    .room-door-left {
+      position: absolute;
+      left: -2px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .door-arc-left {
+      width: 26px;
+      height: 64px;
+      border: 2px solid #b07850;
+      border-left: none;
+      border-radius: 0 32px 32px 0;
+      background: #faf8f3;
+    }
+
+    .room-door-left .wall-label {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 0.65em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #b07850;
+    }
+
+    /* Passage/fence — right wall, bottom half */
+    .room-passage {
+      position: absolute;
+      right: -2px;
+      bottom: 0;
+      height: 50%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .passage-fence {
+      width: 10px;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to bottom,
+        #9a8a6a 0px,
+        #9a8a6a 5px,
+        #faf8f3 5px,
+        #faf8f3 11px
+      );
+    }
+
+    .room-passage .wall-label {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      font-size: 0.65em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9a8a6a;
+    }
+
+    /* Door bottom right */
+    .room-door {
+      position: absolute;
+      bottom: -2px;
+      right: 12%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .door-arc {
+      width: 44px;
+      height: 22px;
+      border: 2px solid #b07850;
+      border-bottom: none;
+      border-radius: 22px 22px 0 0;
+    }
+
+    .room-door .wall-label {
+      font-size: 0.65em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #b07850;
+      margin-top: 2px;
+    }
+
+    /* ── Actions ── */
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    button {
+      padding: 9px 22px;
+      border: 1px solid #c9a87a;
+      border-radius: 5px;
+      background: #fff8ee;
+      color: #7a5c3a;
+      font-family: Georgia, serif;
+      font-size: 0.85em;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: background 0.15s;
+    }
+
+    button:hover { background: #f0e8d8; }
+    button.primary { background: #c9a87a; color: #fff; border-color: #b89060; }
+    button.primary:hover { background: #b89060; }
+
+    .saved-msg {
+      text-align: center;
+      font-size: 0.8em;
+      color: #a08060;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .saved-msg.show { opacity: 1; }
+
+    .seat.dragging  { opacity: 0.3; }
+    .seat.drag-over { border-color: #c9a87a; background: #fff3e0; box-shadow: 0 0 0 3px rgba(201,168,122,0.35); }
+
+    @media print {
+      .actions, .saved-msg { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sergejs ♥ Silvia</h1>
+    <p>26 June 2026</p>
+  </header>
+
+  <div class="room">
+
+    <!-- Window on top wall, almost full width -->
+    <div class="room-window">
+      <div class="window-bar">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="wall-label">Window</div>
+    </div>
+
+    <!-- Door on left wall, centered vertically -->
+    <div class="room-door-left">
+      <div class="door-arc-left"></div>
+      <div class="wall-label">Door</div>
+    </div>
+
+    <!-- Passage/fence on right wall, bottom half -->
+    <div class="room-passage">
+      <div class="wall-label">Passage w/ Fence</div>
+      <div class="passage-fence"></div>
+    </div>
+
+    <!-- Door on bottom right -->
+    <div class="room-door">
+      <div class="door-arc"></div>
+      <div class="wall-label">Door</div>
+    </div>
+
+    <!-- Rectangle table -->
+    <div class="rect-wrap">
+      <div class="table-label">Head Table</div>
+      <div class="rect-seats" id="rect-top">
+        <div class="seat" contenteditable="true" data-id="R-1" data-placeholder="name">Serge</div>
+        <div class="seat" contenteditable="true" data-id="R-2" data-placeholder="name">Irina</div>
+        <div class="seat" contenteditable="true" data-id="R-3" data-placeholder="name">Sergejs</div>
+        <div class="seat" contenteditable="true" data-id="R-4" data-placeholder="name">Silvia</div>
+        <div class="seat" contenteditable="true" data-id="R-5" data-placeholder="name">Gador</div>
+        <div class="seat" contenteditable="true" data-id="R-6" data-placeholder="name">Jesus</div>
+      </div>
+      <div class="rect-body">Head Table</div>
+    </div>
+
+    <!-- Round tables -->
+    <div class="round-layout">
+      <div>
+        <div class="table-label">Table 1</div>
+        <div class="round-wrap" id="t1">
+          <div class="round-body">Table 1</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T1-1" data-placeholder="name" style="left: 150px; top: 35px;">Filip</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T1-2" data-placeholder="name" style="left: 217.595px; top: 56.963px;">Julianna</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T1-3" data-placeholder="name" style="left: 259.371px; top: 114.463px;">Camelia</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T1-4" data-placeholder="name" style="left: 259.371px; top: 185.537px;">Daniels</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T1-5" data-placeholder="name" style="left: 217.595px; top: 243.037px;">Zhenya</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T1-6" data-placeholder="name" style="left: 150px; top: 265px;">Juris</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T1-7" data-placeholder="name" style="left: 82.4047px; top: 243.037px;">Ljuba</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T1-8" data-placeholder="name" style="left: 40.6285px; top: 185.537px;">Lena</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T1-9" data-placeholder="name" style="left: 40.6285px; top: 114.463px;">David</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T1-10" data-placeholder="name" style="left: 82.4047px; top: 56.963px;">Iona</div>
+        </div>
+      </div>
+      <div>
+        <div class="table-label">Table 2</div>
+        <div class="round-wrap" id="t2">
+          <div class="round-body">Table 2</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T2-1" data-placeholder="name" style="left: 150px; top: 35px;">Pablo</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T2-2" data-placeholder="name" style="left: 217.595px; top: 56.963px;">Adrian</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T2-3" data-placeholder="name" style="left: 259.371px; top: 114.463px;">Lucia</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T2-4" data-placeholder="name" style="left: 259.371px; top: 185.537px;">Isabella</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T2-5" data-placeholder="name" style="left: 217.595px; top: 243.037px;">Juanfran</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T2-6" data-placeholder="name" style="left: 150px; top: 265px;">Noelia</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T2-7" data-placeholder="name" style="left: 82.4047px; top: 243.037px;">Jorje</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T2-8" data-placeholder="name" style="left: 40.6285px; top: 185.537px;">Noel</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T2-9" data-placeholder="name" style="left: 40.6285px; top: 114.463px;">Nick</div>
+          <div class="seat round-seat" contenteditable="true" data-id="T2-10" data-placeholder="name" style="left: 82.4047px; top: 56.963px;">Marina</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <button onclick="clearAll()">Clear all</button>
+    <button class="primary" onclick="saveHTML()">Save</button>
+  </div>
+  <div class="saved-msg" id="savedMsg">Downloaded — replace the old file with this one</div>
+
+  <script id="seating-data" type="application/json">{
+  "R-1": "Serge",
+  "R-2": "Irina",
+  "R-3": "Sergejs",
+  "R-4": "Silvia",
+  "R-5": "Gador",
+  "R-6": "Jesus",
+  "T1-1": "Filip",
+  "T1-2": "Julianna",
+  "T1-3": "Camelia",
+  "T1-4": "Daniels",
+  "T1-5": "Zhenya",
+  "T1-6": "Juris",
+  "T1-7": "Ljuba",
+  "T1-8": "Lena",
+  "T1-9": "David",
+  "T1-10": "Iona",
+  "T2-1": "Pablo",
+  "T2-2": "Adrian",
+  "T2-3": "Lucia",
+  "T2-4": "Isabella",
+  "T2-5": "Juanfran",
+  "T2-6": "Noelia",
+  "T2-7": "Jorje",
+  "T2-8": "Noel",
+  "T2-9": "Nick",
+  "T2-10": "Marina"
+}</script>
+
+  <script>
+    function getData() {
+      const d = {};
+      document.querySelectorAll('.seat').forEach(el => d[el.dataset.id] = el.innerText.trim());
+      return d;
+    }
+
+    function applyData(d) {
+      document.querySelectorAll('.seat').forEach(el => {
+        if (d[el.dataset.id] !== undefined) el.innerText = d[el.dataset.id];
+      });
+    }
+
+    function saveHTML() {
+      const json = JSON.stringify(getData(), null, 2);
+      const src = document.documentElement.outerHTML.replace(
+        /<script id="seating-data"[^>]*>[\s\S]*?<\/script>/,
+        `<script id="seating-data" type="application/json">${json}<\/script>`
+      );
+      const blob = new Blob([src], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'tables.html';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      const m = document.getElementById('savedMsg');
+      m.classList.add('show');
+      clearTimeout(m._t);
+      m._t = setTimeout(() => m.classList.remove('show'), 3000);
+    }
+
+    function clearAll() {
+      if (!confirm('Clear all names?')) return;
+      document.querySelectorAll('.seat').forEach(el => el.innerText = '');
+    }
+
+    function initDrag() {
+      let src = null;
+      document.querySelectorAll('.seat').forEach(el => {
+        el.setAttribute('draggable', 'true');
+        el.addEventListener('dragstart', e => {
+          src = el;
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('text/plain', el.dataset.id);
+          setTimeout(() => el.classList.add('dragging'), 0);
+        });
+        el.addEventListener('dragover', e => {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+          if (el !== src) el.classList.add('drag-over');
+        });
+        el.addEventListener('dragleave', () => el.classList.remove('drag-over'));
+        el.addEventListener('drop', e => {
+          e.preventDefault();
+          el.classList.remove('drag-over');
+          if (src && src !== el) {
+            const tmp = src.innerText;
+            src.innerText = el.innerText;
+            el.innerText = tmp;
+          }
+        });
+        el.addEventListener('dragend', () => {
+          src = null;
+          document.querySelectorAll('.seat').forEach(s => s.classList.remove('dragging', 'drag-over'));
+        });
+      });
+    }
+
+    try {
+      applyData(JSON.parse(document.getElementById('seating-data').textContent));
+    } catch {}
+    initDrag();
+</script>
+
+</body></html>

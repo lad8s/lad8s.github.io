@@ -1,0 +1,322 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>Sergejs &amp; Silvia – Seating Plan</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, serif;
+      background: #faf8f3;
+      color: #3a3028;
+      padding: 30px 20px;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      font-weight: normal;
+      letter-spacing: 0.1em;
+      color: #7a5c3a;
+    }
+
+    header p {
+      color: #a08060;
+      margin-top: 6px;
+      letter-spacing: 0.06em;
+      font-size: 0.95em;
+    }
+
+    .altar {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .altar-box {
+      display: inline-block;
+      border: 2px solid #c9a87a;
+      border-bottom: none;
+      border-radius: 60px 60px 0 0;
+      padding: 12px 50px 8px;
+      color: #7a5c3a;
+      font-size: 0.9em;
+      letter-spacing: 0.08em;
+      background: #fff8ee;
+    }
+
+    .aisle-label {
+      text-align: center;
+      font-size: 0.7em;
+      color: #ccc;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 48px 1fr;
+      gap: 0;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .side-label {
+      font-size: 0.72em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #b09070;
+      margin-bottom: 4px;
+    }
+
+    .side.left .side-label { text-align: right; }
+    .side.right .side-label { text-align: left; }
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .seat {
+      background: #fff;
+      border: 1px solid #ddd0bb;
+      border-radius: 6px;
+      padding: 8px 6px;
+      min-height: 48px;
+      font-size: 0.82em;
+      text-align: center;
+      cursor: text;
+      outline: none;
+      color: #3a3028;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      word-break: break-word;
+      line-height: 1.4;
+    }
+
+    .seat:empty::before {
+      content: attr(data-placeholder);
+      color: #ccc;
+      font-style: italic;
+      font-size: 0.9em;
+    }
+
+    .seat:focus {
+      border-color: #c9a87a;
+      box-shadow: 0 0 0 2px rgba(201,168,122,0.2);
+    }
+
+    .aisle-col {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .aisle-line {
+      width: 2px;
+      background: repeating-linear-gradient(
+        to bottom,
+        #d4c0a0 0px,
+        #d4c0a0 6px,
+        transparent 6px,
+        transparent 14px
+      );
+      margin: 0 auto;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 28px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    button {
+      padding: 9px 22px;
+      border: 1px solid #c9a87a;
+      border-radius: 5px;
+      background: #fff8ee;
+      color: #7a5c3a;
+      font-family: Georgia, serif;
+      font-size: 0.85em;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: background 0.15s;
+    }
+
+    button:hover { background: #f0e8d8; }
+    button.primary { background: #c9a87a; color: #fff; border-color: #b89060; }
+    button.primary:hover { background: #b89060; }
+
+    .saved-msg {
+      font-size: 0.8em;
+      color: #a08060;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      text-align: center;
+    }
+
+    .saved-msg.show { opacity: 1; }
+
+    @media print {
+      .actions, .saved-msg { display: none; }
+      body { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sergejs ♥ Silvia</h1>
+    <p>26 June 2026</p>
+  </header>
+
+  <div class="altar">
+    <div class="altar-box">Altar</div>
+  </div>
+  <div class="aisle-label">— aisle —</div>
+
+  <div class="layout">
+    <div class="side left">
+      <div class="side-label">Groom's side</div>
+      <div class="row" id="L1">
+        <div class="seat" contenteditable="true" data-id="L1-1" data-placeholder="name">Julianna</div>
+        <div class="seat" contenteditable="true" data-id="L1-2" data-placeholder="name">Serge</div>
+        <div class="seat" contenteditable="true" data-id="L1-3" data-placeholder="name">Irina</div>
+      </div>
+      <div class="row" id="L2">
+        <div class="seat" contenteditable="true" data-id="L2-1" data-placeholder="name">Iona</div>
+        <div class="seat" contenteditable="true" data-id="L2-2" data-placeholder="name">David</div>
+        <div class="seat" contenteditable="true" data-id="L2-3" data-placeholder="name">Filip</div>
+      </div>
+      <div class="row" id="L3">
+        <div class="seat" contenteditable="true" data-id="L3-1" data-placeholder="name">Lena</div>
+        <div class="seat" contenteditable="true" data-id="L3-2" data-placeholder="name">Juris</div>
+        <div class="seat" contenteditable="true" data-id="L3-3" data-placeholder="name">Luba</div>
+      </div>
+      <div class="row" id="L4">
+        <div class="seat" contenteditable="true" data-id="L4-1" data-placeholder="name">Noel</div>
+        <div class="seat" contenteditable="true" data-id="L4-2" data-placeholder="name">Nick</div>
+        <div class="seat" contenteditable="true" data-id="L4-3" data-placeholder="name">Daniels</div>
+      </div>
+    </div>
+
+    <div class="aisle-col">
+      <div class="aisle-line"></div>
+    </div>
+
+    <div class="side right">
+      <div class="side-label">Bride's side</div>
+      <div class="row" id="R1">
+        <div class="seat" contenteditable="true" data-id="R1-1" data-placeholder="name">Gador</div>
+        <div class="seat" contenteditable="true" data-id="R1-2" data-placeholder="name">Jesus</div>
+        <div class="seat" contenteditable="true" data-id="R1-3" data-placeholder="name">Noelia</div>
+      </div>
+      <div class="row" id="R2">
+        <div class="seat" contenteditable="true" data-id="R2-1" data-placeholder="name">Isabela</div>
+        <div class="seat" contenteditable="true" data-id="R2-2" data-placeholder="name">Juanfran</div>
+        <div class="seat" contenteditable="true" data-id="R2-3" data-placeholder="name">Jorje</div>
+      </div>
+      <div class="row" id="R3">
+        <div class="seat" contenteditable="true" data-id="R3-1" data-placeholder="name">Camelia</div>
+        <div class="seat" contenteditable="true" data-id="R3-2" data-placeholder="name">Marina</div>
+        <div class="seat" contenteditable="true" data-id="R3-3" data-placeholder="name">Pablo</div>
+      </div>
+      <div class="row" id="R4">
+        <div class="seat" contenteditable="true" data-id="R4-1" data-placeholder="name">Zhenya</div>
+        <div class="seat" contenteditable="true" data-id="R4-2" data-placeholder="name">Lucia</div>
+        <div class="seat" contenteditable="true" data-id="R4-3" data-placeholder="name">Adrian</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button onclick="clearAll()">Clear all</button>
+    <button class="primary" onclick="saveHTML()">Save</button>
+  </div>
+  <div class="saved-msg" id="savedMsg">Saved — replace the old file with the download</div>
+
+  <script id="seating-data" type="application/json">{
+  "L1-1": "Julianna",
+  "L1-2": "Serge",
+  "L1-3": "Irina",
+  "L2-1": "Iona",
+  "L2-2": "David",
+  "L2-3": "Filip",
+  "L3-1": "Lena",
+  "L3-2": "Juris",
+  "L3-3": "Luba",
+  "L4-1": "Noel",
+  "L4-2": "Nick",
+  "L4-3": "Daniels",
+  "R1-1": "Gador",
+  "R1-2": "Jesus",
+  "R1-3": "Noelia",
+  "R2-1": "Isabela",
+  "R2-2": "Juanfran",
+  "R2-3": "Jorje",
+  "R3-1": "Camelia",
+  "R3-2": "Marina",
+  "R3-3": "Pablo",
+  "R4-1": "Zhenya",
+  "R4-2": "Lucia",
+  "R4-3": "Adrian"
+}</script>
+
+  <script>
+    function getData() {
+      const d = {};
+      document.querySelectorAll('.seat').forEach(el => d[el.dataset.id] = el.innerText.trim());
+      return d;
+    }
+
+    function applyData(d) {
+      document.querySelectorAll('.seat').forEach(el => {
+        if (d[el.dataset.id] !== undefined) el.innerText = d[el.dataset.id];
+      });
+    }
+
+    function saveHTML() {
+      const json = JSON.stringify(getData(), null, 2);
+      const src = document.documentElement.outerHTML.replace(
+        /<script id="seating-data"[^>]*>[\s\S]*?<\/script>/,
+        `<script id="seating-data" type="application/json">${json}<\/script>`
+      );
+      const blob = new Blob([src], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'seating-plan.html';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      const m = document.getElementById('savedMsg');
+      m.classList.add('show');
+      clearTimeout(m._t);
+      m._t = setTimeout(() => m.classList.remove('show'), 3000);
+    }
+
+    function clearAll() {
+      if (!confirm('Clear all names?')) return;
+      document.querySelectorAll('.seat').forEach(el => el.innerText = '');
+    }
+
+    // Load embedded data on open
+    try {
+      applyData(JSON.parse(document.getElementById('seating-data').textContent));
+    } catch {}
+  </script>
+
+
+
+</body></html>
