@@ -32,10 +32,11 @@
 
     /* ── Shared seat style ── */
     .seat {
+      position: relative;
       background: #fff;
       border: 1px solid #ddd0bb;
       border-radius: 6px;
-      padding: 6px 8px;
+      padding: 6px 8px 14px;
       min-height: 42px;
       width: 80px;
       font-size: 0.8em;
@@ -44,7 +45,7 @@
       outline: none;
       line-height: 1.4;
       word-break: break-word;
-      transition: border-color 0.15s, box-shadow 0.15s;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
     }
 
     .seat:empty::before {
@@ -57,6 +58,28 @@
       border-color: #c9a87a;
       box-shadow: 0 0 0 2px rgba(201,168,122,0.2);
     }
+
+    .diet-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 3px;
+      font-size: 0.58em;
+      font-weight: bold;
+      line-height: 1.4;
+      padding: 0 3px;
+      border-radius: 3px;
+      cursor: pointer;
+      user-select: none;
+      color: #ccc;
+      border: 1px solid #e0d8cc;
+      background: transparent;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .seat[data-diet="v"]  { background: #f2faf2; border-color: #a8d4a8; }
+    .seat[data-diet="vg"] { background: #e8f7e8; border-color: #7fc47f; }
+    .seat[data-diet="v"]  .diet-badge { color: #fff; background: #72b872; border-color: #72b872; }
+    .seat[data-diet="vg"] .diet-badge { color: #fff; background: #4a9a5a; border-color: #4a9a5a; }
 
     /* ── Table label ── */
     .table-label {
@@ -97,8 +120,15 @@
     /* ── Round tables ── */
     .round-layout {
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .round-row {
+      display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 120px;
       flex-wrap: wrap;
     }
 
@@ -139,7 +169,7 @@
       border: 2px solid #c9b89a;
       border-radius: 6px;
       padding: 30px 50px 40px;
-      max-width: 760px;
+      max-width: 880px;
       margin: 0 auto;
     }
 
@@ -353,48 +383,58 @@
     <div class="rect-wrap">
       <div class="table-label">Head Table</div>
       <div class="rect-seats" id="rect-top">
-        <div class="seat" contenteditable="true" data-id="R-1" data-placeholder="name">Serge</div>
-        <div class="seat" contenteditable="true" data-id="R-2" data-placeholder="name">Irina</div>
-        <div class="seat" contenteditable="true" data-id="R-3" data-placeholder="name">Sergejs</div>
-        <div class="seat" contenteditable="true" data-id="R-4" data-placeholder="name">Silvia</div>
-        <div class="seat" contenteditable="true" data-id="R-5" data-placeholder="name">Gador</div>
-        <div class="seat" contenteditable="true" data-id="R-6" data-placeholder="name">Jesus</div>
+        <div class="seat" contenteditable="true" data-id="R-1" data-placeholder="name" draggable="true">Serge</div>
+        <div class="seat" contenteditable="true" data-id="R-2" data-placeholder="name" draggable="true">Irina</div>
+        <div class="seat" contenteditable="true" data-id="R-3" data-placeholder="name" draggable="true">Sergejs</div>
+        <div class="seat" contenteditable="true" data-id="R-4" data-placeholder="name" draggable="true" data-diet="v">Silvia</div>
+        <div class="seat" contenteditable="true" data-id="R-5" data-placeholder="name" draggable="true">Gador</div>
+        <div class="seat" contenteditable="true" data-id="R-6" data-placeholder="name" draggable="true">Jesus</div>
       </div>
       <div class="rect-body">Head Table</div>
     </div>
 
     <!-- Round tables -->
     <div class="round-layout">
-      <div>
-        <div class="table-label">Table 1</div>
-        <div class="round-wrap" id="t1">
-          <div class="round-body">Table 1</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T1-1" data-placeholder="name" style="left: 150px; top: 35px;">Filip</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T1-2" data-placeholder="name" style="left: 217.595px; top: 56.963px;">Julianna</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T1-3" data-placeholder="name" style="left: 259.371px; top: 114.463px;">Camelia</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T1-4" data-placeholder="name" style="left: 259.371px; top: 185.537px;">Daniels</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T1-5" data-placeholder="name" style="left: 217.595px; top: 243.037px;">Zhenya</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T1-6" data-placeholder="name" style="left: 150px; top: 265px;">Juris</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T1-7" data-placeholder="name" style="left: 82.4047px; top: 243.037px;">Ljuba</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T1-8" data-placeholder="name" style="left: 40.6285px; top: 185.537px;">Lena</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T1-9" data-placeholder="name" style="left: 40.6285px; top: 114.463px;">David</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T1-10" data-placeholder="name" style="left: 82.4047px; top: 56.963px;">Iona</div>
+      <div class="round-row">
+        <div>
+          <div class="table-label">Table 1</div>
+          <div class="round-wrap" id="t1">
+            <div class="round-body">Table 1</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T1-1" data-placeholder="name" style="left: 150px; top: 35px;" draggable="true">Nick</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T1-2" data-placeholder="name" style="left: 239.91px; top: 78.30px;" draggable="true">Zhenya</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T1-3" data-placeholder="name" style="left: 262.12px; top: 175.59px;" draggable="true">Pablo</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T1-4" data-placeholder="name" style="left: 197.77px; top: 254.61px;" draggable="true" data-diet="vg">Marina</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T1-5" data-placeholder="name" style="left: 102.23px; top: 254.61px;" draggable="true">Camelia</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T1-6" data-placeholder="name" style="left: 37.88px; top: 175.59px;" draggable="true">Daniels</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T1-7" data-placeholder="name" style="left: 60.09px; top: 78.30px;" draggable="true">Noel</div>
+          </div>
+        </div>
+        <div>
+          <div class="table-label">Table 2</div>
+          <div class="round-wrap" id="t2">
+            <div class="round-body">Table 2</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T2-1" data-placeholder="name" style="left: 150px; top: 35px;" draggable="true">Iona</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T2-2" data-placeholder="name" style="left: 239.91px; top: 78.30px;" draggable="true">Lena</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T2-3" data-placeholder="name" style="left: 262.12px; top: 175.59px;" draggable="true">Ljuba</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T2-4" data-placeholder="name" style="left: 197.77px; top: 254.61px;" draggable="true">Juris</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T2-5" data-placeholder="name" style="left: 102.23px; top: 254.61px;" draggable="true">Julianna</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T2-6" data-placeholder="name" style="left: 37.88px; top: 175.59px;" draggable="true">David</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T2-7" data-placeholder="name" style="left: 60.09px; top: 78.30px;" draggable="true">Filip</div>
+          </div>
         </div>
       </div>
-      <div>
-        <div class="table-label">Table 2</div>
-        <div class="round-wrap" id="t2">
-          <div class="round-body">Table 2</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T2-1" data-placeholder="name" style="left: 150px; top: 35px;">Pablo</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T2-2" data-placeholder="name" style="left: 217.595px; top: 56.963px;">Adrian</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T2-3" data-placeholder="name" style="left: 259.371px; top: 114.463px;">Lucia</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T2-4" data-placeholder="name" style="left: 259.371px; top: 185.537px;">Isabella</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T2-5" data-placeholder="name" style="left: 217.595px; top: 243.037px;">Juanfran</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T2-6" data-placeholder="name" style="left: 150px; top: 265px;">Noelia</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T2-7" data-placeholder="name" style="left: 82.4047px; top: 243.037px;">Jorje</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T2-8" data-placeholder="name" style="left: 40.6285px; top: 185.537px;">Noel</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T2-9" data-placeholder="name" style="left: 40.6285px; top: 114.463px;">Nick</div>
-          <div class="seat round-seat" contenteditable="true" data-id="T2-10" data-placeholder="name" style="left: 82.4047px; top: 56.963px;">Marina</div>
+      <div class="round-row" style="margin-top: -120px;">
+        <div>
+          <div class="table-label">Table 3</div>
+          <div class="round-wrap" id="t3">
+            <div class="round-body">Table 3</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T3-1" data-placeholder="name" style="left: 150px; top: 35px;" draggable="true">Adrian</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T3-2" data-placeholder="name" style="left: 249.59px; top: 92.5px;" draggable="true">Lucia</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T3-3" data-placeholder="name" style="left: 249.59px; top: 207.5px;" draggable="true">Isabella</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T3-4" data-placeholder="name" style="left: 150px; top: 265px;" draggable="true">Juanfran</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T3-5" data-placeholder="name" style="left: 50.41px; top: 207.5px;" draggable="true">Jorje</div>
+            <div class="seat round-seat" contenteditable="true" data-id="T3-6" data-placeholder="name" style="left: 50.41px; top: 92.5px;" draggable="true" data-diet="v">Noelia</div>
+          </div>
         </div>
       </div>
     </div>
@@ -412,40 +452,64 @@
   "R-2": "Irina",
   "R-3": "Sergejs",
   "R-4": "Silvia",
+  "R-4~diet": "v",
   "R-5": "Gador",
   "R-6": "Jesus",
-  "T1-1": "Filip",
-  "T1-2": "Julianna",
-  "T1-3": "Camelia",
-  "T1-4": "Daniels",
-  "T1-5": "Zhenya",
-  "T1-6": "Juris",
-  "T1-7": "Ljuba",
-  "T1-8": "Lena",
-  "T1-9": "David",
-  "T1-10": "Iona",
-  "T2-1": "Pablo",
-  "T2-2": "Adrian",
-  "T2-3": "Lucia",
-  "T2-4": "Isabella",
-  "T2-5": "Juanfran",
-  "T2-6": "Noelia",
-  "T2-7": "Jorje",
-  "T2-8": "Noel",
-  "T2-9": "Nick",
-  "T2-10": "Marina"
+  "T1-1": "Nick",
+  "T1-2": "Zhenya",
+  "T1-3": "Pablo",
+  "T1-4": "Marina",
+  "T1-4~diet": "vg",
+  "T1-5": "Camelia",
+  "T1-6": "Daniels",
+  "T1-7": "Noel",
+  "T2-1": "Iona",
+  "T2-2": "Lena",
+  "T2-3": "Ljuba",
+  "T2-4": "Juris",
+  "T2-5": "Julianna",
+  "T2-6": "David",
+  "T2-7": "Filip",
+  "T3-1": "Adrian",
+  "T3-2": "Lucia",
+  "T3-3": "Isabella",
+  "T3-4": "Juanfran",
+  "T3-5": "Jorje",
+  "T3-6": "Noelia",
+  "T3-6~diet": "v"
 }</script>
 
   <script>
+    function getSeatName(el) {
+      const clone = el.cloneNode(true);
+      clone.querySelector('.diet-badge')?.remove();
+      return clone.innerText.trim();
+    }
+
+    function updateBadgeLabel(seat, badge) {
+      const d = seat.dataset.diet || '';
+      badge.textContent = d === 'v' ? 'V' : d === 'vg' ? 'VG' : '+';
+    }
+
     function getData() {
       const d = {};
-      document.querySelectorAll('.seat').forEach(el => d[el.dataset.id] = el.innerText.trim());
+      document.querySelectorAll('.seat').forEach(el => {
+        d[el.dataset.id] = getSeatName(el);
+        if (el.dataset.diet) d[el.dataset.id + '~diet'] = el.dataset.diet;
+      });
       return d;
     }
 
     function applyData(d) {
       document.querySelectorAll('.seat').forEach(el => {
-        if (d[el.dataset.id] !== undefined) el.innerText = d[el.dataset.id];
+        const badge = el.querySelector('.diet-badge');
+        if (d[el.dataset.id] !== undefined) {
+          el.innerText = d[el.dataset.id];
+          if (badge) el.appendChild(badge);
+        }
+        const dietVal = d[el.dataset.id + '~diet'];
+        if (dietVal) el.dataset.diet = dietVal; else delete el.dataset.diet;
+        if (badge) updateBadgeLabel(el, badge);
       });
     }
 
@@ -469,7 +533,33 @@
 
     function clearAll() {
       if (!confirm('Clear all names?')) return;
-      document.querySelectorAll('.seat').forEach(el => el.innerText = '');
+      document.querySelectorAll('.seat').forEach(el => {
+        const badge = el.querySelector('.diet-badge');
+        el.innerText = '';
+        delete el.dataset.diet;
+        if (badge) { el.appendChild(badge); updateBadgeLabel(el, badge); }
+      });
+    }
+
+    function initDiet() {
+      document.querySelectorAll('.seat').forEach(el => {
+        let badge = el.querySelector('.diet-badge');
+        if (!badge) {
+          badge = document.createElement('span');
+          badge.className = 'diet-badge';
+          badge.contentEditable = 'false';
+          el.appendChild(badge);
+        }
+        updateBadgeLabel(el, badge);
+        badge.addEventListener('click', e => {
+          e.preventDefault();
+          e.stopPropagation();
+          const cur = el.dataset.diet || '';
+          el.dataset.diet = cur === '' ? 'v' : cur === 'v' ? 'vg' : '';
+          if (!el.dataset.diet) delete el.dataset.diet;
+          updateBadgeLabel(el, badge);
+        });
+      });
     }
 
     function initDrag() {
@@ -492,9 +582,14 @@
           e.preventDefault();
           el.classList.remove('drag-over');
           if (src && src !== el) {
-            const tmp = src.innerText;
-            src.innerText = el.innerText;
-            el.innerText = tmp;
+            const srcBadge = src.querySelector('.diet-badge');
+            const dstBadge = el.querySelector('.diet-badge');
+            const srcName = getSeatName(src);
+            const dstName = getSeatName(el);
+            src.innerText = dstName;
+            el.innerText = srcName;
+            if (srcBadge) { src.appendChild(srcBadge); updateBadgeLabel(src, srcBadge); }
+            if (dstBadge) { el.appendChild(dstBadge); updateBadgeLabel(el, dstBadge); }
           }
         });
         el.addEventListener('dragend', () => {
@@ -507,7 +602,9 @@
     try {
       applyData(JSON.parse(document.getElementById('seating-data').textContent));
     } catch {}
+    initDiet();
     initDrag();
-</script>
+  </script>
+
 
 </body></html>
