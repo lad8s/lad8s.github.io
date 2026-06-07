@@ -303,13 +303,32 @@
       margin-top: 2px;
     }
 
+    .edit-toggle {
+      position: fixed;
+      top: 14px;
+      right: 16px;
+      font-size: 0.75em;
+      font-family: Georgia, serif;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      color: #b09070;
+      border: 1px solid #ddd0bb;
+      border-radius: 5px;
+      padding: 5px 12px;
+      background: #fff8ee;
+      transition: border-color 0.15s, color 0.15s;
+      z-index: 100;
+    }
+    .edit-toggle:hover { border-color: #c9a87a; color: #7a5c3a; }
+
     /* ── Actions ── */
     .actions {
-      display: flex;
+      display: none;
       justify-content: center;
       gap: 10px;
       margin-top: 40px;
     }
+    body.editing .actions { display: flex; }
 
     button {
       padding: 9px 22px;
@@ -347,6 +366,8 @@
   </style>
 </head>
 <body>
+
+  <button class="edit-toggle" id="editToggle" onclick="toggleEdit()">✏ Editar</button>
 
   <header>
     <h1>Sergejs ♥ Silvia</h1>
@@ -599,6 +620,12 @@
           document.querySelectorAll('.seat').forEach(s => s.classList.remove('dragging', 'drag-over'));
         });
       });
+    }
+
+    function toggleEdit() {
+      document.body.classList.toggle('editing');
+      document.getElementById('editToggle').textContent =
+        document.body.classList.contains('editing') ? '✕ Cerrar' : '✏ Editar';
     }
 
     try {
