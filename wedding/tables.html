@@ -365,9 +365,9 @@
     }
   </style>
 </head>
-<body>
+<body class="editing">
 
-  <button class="edit-toggle" id="editToggle" onclick="toggleEdit()">✏ Editar</button>
+  <button class="edit-toggle" id="editToggle" onclick="toggleEdit()">✕ Cerrar</button>
 
   <header>
     <h1>Sergejs ♥ Silvia</h1>
@@ -406,12 +406,12 @@
     <div class="rect-wrap">
       <div class="table-label">Mesa Principal</div>
       <div class="rect-seats" id="rect-top">
-        <div class="seat" contenteditable="true" data-id="R-1" data-placeholder="nombre" draggable="true">Serge<span class="diet-badge" contenteditable="false">+</span></div>
-        <div class="seat" contenteditable="true" data-id="R-2" data-placeholder="nombre" draggable="true">Irina<span class="diet-badge" contenteditable="false">+</span></div>
-        <div class="seat" contenteditable="true" data-id="R-3" data-placeholder="nombre" draggable="true">Sergejs<span class="diet-badge" contenteditable="false">+</span></div>
-        <div class="seat" contenteditable="true" data-id="R-4" data-placeholder="nombre" draggable="true" data-diet="v">Silvia<span class="diet-badge" contenteditable="false">Vegetariano</span></div>
-        <div class="seat" contenteditable="true" data-id="R-5" data-placeholder="nombre" draggable="true">Jesus<span class="diet-badge" contenteditable="false">+</span></div>
-        <div class="seat" contenteditable="true" data-id="R-6" data-placeholder="nombre" draggable="true">Gador<span class="diet-badge" contenteditable="false">+</span></div>
+        <div class="seat" contenteditable="true" data-id="R-1" data-placeholder="nombre" draggable="true">Gador<span class="diet-badge" contenteditable="false">+</span></div>
+        <div class="seat" contenteditable="true" data-id="R-2" data-placeholder="nombre" draggable="true">Jesus<span class="diet-badge" contenteditable="false">+</span></div>
+        <div class="seat" contenteditable="true" data-id="R-3" data-placeholder="nombre" draggable="true" data-diet="v">Silvia<span class="diet-badge" contenteditable="false">Vegetariano</span></div>
+        <div class="seat" contenteditable="true" data-id="R-4" data-placeholder="nombre" draggable="true">Sergejs<span class="diet-badge" contenteditable="false">+</span></div>
+        <div class="seat" contenteditable="true" data-id="R-5" data-placeholder="nombre" draggable="true">Irina<span class="diet-badge" contenteditable="false">+</span></div>
+        <div class="seat" contenteditable="true" data-id="R-6" data-placeholder="nombre" draggable="true">Serge<span class="diet-badge" contenteditable="false">+</span></div>
       </div>
       <div class="rect-body">Mesa Principal</div>
     </div>
@@ -471,13 +471,13 @@
   <div class="saved-msg" id="savedMsg">Downloaded — replace the old file with this one</div>
 
   <script id="seating-data" type="application/json">{
-  "R-1": "Serge",
-  "R-2": "Irina",
-  "R-3": "Sergejs",
-  "R-4": "Silvia",
-  "R-4~diet": "v",
-  "R-5": "Jesus",
-  "R-6": "Gador",
+  "R-1": "Gador",
+  "R-2": "Jesus",
+  "R-3": "Silvia",
+  "R-3~diet": "v",
+  "R-4": "Sergejs",
+  "R-5": "Irina",
+  "R-6": "Serge",
   "T1-1": "Nick",
   "T1-2": "Zhenya",
   "T1-3": "Pablo",
